@@ -43,6 +43,7 @@ public class TreeTraversal {
     }
 
     // Helper for preOrder().
+    // Root Left Right
     private void preOrder(Node x, Queue<Node> q) {
         if (x != null) {
             q.enqueue(x);
@@ -59,6 +60,7 @@ public class TreeTraversal {
     }
 
     // Helper for inOrder().
+    // Left Root Right
     private void inOrder(Node x, Queue<Node> q) {
         if (x != null) {
             inOrder(x.left, q);
@@ -75,10 +77,10 @@ public class TreeTraversal {
     }
 
     // Helper for postOrder().
+    // Left Right Root
     private void postOrder(Node x, Queue<Node> q) {
         if (x != null) {
             postOrder(x.left, q);
-
             postOrder(x.right, q);
             q.enqueue(x);
         }
@@ -86,8 +88,8 @@ public class TreeTraversal {
 
     // Return the nodes of the tree traversed level-order.
     public Iterable<Node> levelOrder() {
-        Queue<Node> queue = new Queue<Node>();
-        Queue<Node> result = new Queue<Node>();
+        Queue<Node> queue = new Queue<Node>();  // use for traversing through the tree
+        Queue<Node> result = new Queue<Node>(); // result to return
         queue.enqueue(this.root);
         while (!queue.isEmpty()) {
             Node current = queue.dequeue();
