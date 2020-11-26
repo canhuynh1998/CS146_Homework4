@@ -24,7 +24,7 @@ public class Spell {
             String correct = line[1];   // correct words
             st.put(word, correct);
         }
-        //StdOut.println(st.contains("Ukranian"));
+ 
         In in2 = new In(args[1]);
         int line2 = 1;
         while (in2.hasNextLine()) {
